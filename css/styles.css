@@ -1,0 +1,121 @@
+/* 1. Design Tokens */
+:root {
+    --bg-base: #f8fafc;
+    --bg-surface: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --primary: #2563eb;
+    --border: #e2e8f0;
+    --card-hover: #f1f5f9;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-base: #0f172a;
+        --bg-surface: #1e293b;
+        --text-main: #f8fafc;
+        --text-muted: #94a3b8;
+        --primary: #3b82f6;
+        --border: #334155;
+        --card-hover: #0f172a;
+    }
+}
+
+/* 2. Global Resets & Layout */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-base);
+    color: var(--text-main);
+    line-height: 1.6;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* 3. Sidebar */
+aside {
+    background-color: var(--bg-surface);
+    border-right: 1px solid var(--border);
+    padding: 2rem 1.5rem;
+    overflow-y: auto;
+}
+aside h2 { font-size: 0.875rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; margin-top: 1.5rem; }
+aside h2:first-child { margin-top: 0; }
+aside ul { list-style: none; }
+aside li { margin-bottom: 0.5rem; }
+aside a { color: var(--text-main); text-decoration: none; font-size: 0.95rem; display: block; padding: 0.25rem 0; }
+aside a:hover, aside a.active { color: var(--primary); font-weight: 600; }
+
+/* 4. Main Content Area */
+main { padding: 3rem 4rem; overflow-y: auto; }
+article { max-width: 1000px; margin: 0 auto; }
+.page-header { margin-bottom: 3rem; border-bottom: 1px solid var(--border); padding-bottom: 2rem; }
+.page-header h1 { font-size: 3rem; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+.page-header p { font-size: 1.2rem; color: var(--text-muted); max-width: 700px; }
+
+/* 5. Components: Cards (Index Page) */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+.card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+}
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    background-color: var(--card-hover);
+}
+.card-meta { font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; }
+.card h3 { margin: 0 0 0.75rem 0; font-size: 1.25rem; color: var(--text-main); }
+.card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1; }
+.card-footer { border-top: 1px solid var(--border); padding-top: 1rem; font-size: 0.875rem; color: var(--text-muted); display: flex; justify-content: space-between; }
+
+/* 6. Components: Course List (Overview Page) */
+.course-list { list-style: none; margin-top: 2rem; }
+.course-list li { margin-bottom: 1rem; }
+.course-row {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text-main);
+    transition: transform 0.2s, border-color 0.2s;
+}
+.course-row:hover {
+    transform: translateX(4px);
+    border-color: var(--primary);
+}
+.course-number { font-size: 1.5rem; font-weight: 700; color: var(--text-muted); margin-right: 1.5rem; opacity: 0.5; }
+.course-title { font-size: 1.1rem; font-weight: 600; flex-grow: 1; }
+
+/* 7. Components: Notes & Prompts (Course Page) */
+.content-section { margin-bottom: 3rem; max-width: 800px; }
+.content-section h3 { margin: 2rem 0 1rem; color: var(--primary); border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.prompt-block {
+    background-color: var(--bg-surface);
+    border-left: 4px solid var(--primary);
+    padding: 1rem 1.5rem;
+    margin: 1rem 0;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    color: var(--text-main);
+}
+details { background-color: var(--bg-surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin-bottom: 1rem; }
+summary { font-weight: 600; cursor: pointer; }
+details p { margin-top: 1rem; color: var(--text-muted); }

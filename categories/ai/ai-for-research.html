@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Research and Insights | Notes</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+
+    <aside>
+        <h2>Categories</h2>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Artificial Intelligence</a></li>
+                <li><a href="#">Web Design</a></li>
+            </ul>
+        </nav>
+
+        <h2>Navigation</h2>
+        <nav>
+            <ul>
+                <li><a href="google-ai-cert.html">← Back to Certificate</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main>
+        <article>
+            <header class="page-header">
+                <h1>Course 3: AI for Research and Insights</h1>
+                <p>Transforming AI into a strategic research partner to accelerate learning, synthesize complex documents, and pressure-test ideas.</p>
+            </header>
+
+        <section class="content-section">
+                <h3>Step-by-Step Labs</h3>
+                
+                <h4>Lab: Build with AI - Expert Advice</h4>
+                <p><strong>What are Gems?</strong> Unlike a standard Gemini chat which starts as a blank slate, Gems are custom, saved AI personas. You hardcode their expertise, tone, and goals via system instructions, allowing you to repeatedly consult them for specialized tasks without rewriting the context every time.</p>
+                
+                <p><strong>Step 1: Explore the Persona (Standard Gemini Chat)</strong><br>
+                First, use a regular Gemini chat to generate the foundational traits for your expert.</p>
+                <div class="prompt-block">
+                    What are the key characteristics of [an expert role relevant to your work, e.g. a highly competent interior designer]?
+                </div>
+
+                <p><strong>Step 2: Create the Custom Gem (Gem Manager)</strong><br>
+                Create a "New Gem" in the Gemini app. Give it a name and use the output from Step 1 to define its core instructions.</p>
+                <div class="prompt-block">
+                    You are [expert role, e.g. a highly competent interior designer]. Your key characteristics include: [characteristics from Gemini’s output in the previous step]. I am a [your role]. Use your expertise to challenge my thinking and ensure my ideas are sound. Your advice should be clear, candid, and informative. Stay in character throughout the conversation.
+                </div>
+
+                <p><strong>Step 3: Stress-Test Your Ideas (Chat with your Gem)</strong><br>
+                Start a new chat specifically with your newly created Gem to get highly targeted feedback.</p>
+                <div class="prompt-block">
+                    What are the top factors to consider in selecting a [product or service offered by your company]?
+                </div>
+            </section>
+            
+            <section class="content-section">
+                <h3>Knowledge Checks</h3>
+                
+                <details>
+                    <summary>What is the primary objective of building a custom AI persona when conducting research?</summary>
+                    <p><strong>Answer:</strong> To pressure-test ideas against specific stakeholder perspectives and uncover blind spots.</p>
+                </details>
+
+                <details>
+                    <summary>When relying on AI for research, what is the most critical step to ensure responsible AI usage?</summary>
+                    <p><strong>Answer:</strong> Grounding all responses in verified source documentation to prevent hallucinations.</p>
+                </details>
+            </section>
+        </article>
+    </main>
+
+</body>
+</html>
